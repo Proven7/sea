@@ -13,7 +13,7 @@ const creaturesData = [
     scientificName: 'Amphiprioninae',
     description: '小丑鱼因电影《海底总动员》而广为人知。它们与海葵形成共生关系，海葵为它们提供保护，而小丑鱼则为海葵清理食物残渣。',
     status: 'least-concern',
-    image: 'C:\Users\Administrator\Desktop\海洋\海洋生物\小丑鱼.jpg'
+    image: '海洋生物/小丑鱼.jpg'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const creaturesData = [
     scientificName: 'Chelonioidea',
     description: '海龟已经在地球上生存了超过1亿年。它们每年要迁徙数千公里，回到出生的海滩产卵。塑料污染对海龟构成严重威胁，许多海龟会误食塑料垃圾。',
     status: 'vulnerable',
-    image: 'https://picsum.photos/id/1002/400/400'
+    image: '海洋生物/海龟.jpg'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const creaturesData = [
     scientificName: 'Delphinidae',
     description: '海豚是高度智能的动物，具有复杂的社会行为和沟通能力。它们以鱼类和鱿鱼为食，常常以群体形式生活和捕猎。',
     status: 'least-concern',
-    image: 'https://picsum.photos/id/1003/400/400'
+    image: '海洋生物/海豚.jpg'
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const creaturesData = [
     scientificName: 'Octopoda',
     description: '章鱼是软体动物中最聪明的一类，具有出色的问题解决能力和伪装能力。它们有8条触手，每条触手上都有数百个吸盘。',
     status: 'least-concern',
-    image: 'https://picsum.photos/id/1004/400/400'
+    image: '海洋生物/章鱼.jpg'
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const creaturesData = [
     scientificName: 'Ursus maritimus',
     description: '北极熊是北极地区的标志性物种，依赖海冰捕猎海豹。随着全球变暖导致海冰融化，北极熊的生存面临严重威胁。',
     status: 'vulnerable',
-    image: 'https://picsum.photos/id/1019/400/400'
+    image: '海洋生物/北极熊.jpg'
   }
 ];
 
