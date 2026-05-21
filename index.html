@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>保护海洋 - 守护蓝色星球</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar">
+      <div class="nav-brand">🌊 海洋守护者</div>
+    </nav>
+
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="bubbles-container">
+          <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+          <div class="bubble" style="left: 20%; animation-delay: 1s;"></div>
+          <div class="bubble" style="left: 35%; animation-delay: 2s;"></div>
+          <div class="bubble" style="left: 50%; animation-delay: 0.5s;"></div>
+          <div class="bubble" style="left: 65%; animation-delay: 1.5s;"></div>
+          <div class="bubble" style="left: 80%; animation-delay: 2.5s;"></div>
+          <div class="bubble" style="left: 90%; animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="hero-content">
+          <h1>保护海洋</h1>
+          <p class="subtitle">守护我们的蓝色星球</p>
+          <button class="btn-primary" onclick="showSection('game')">
+            🎮 开始清理海洋
+          </button>
+        </div>
+
+        <div class="waves">
+          <div class="wave wave1"></div>
+          <div class="wave wave2"></div>
+          <div class="wave wave3"></div>
+        </div>
+      </div>
+
+      <div class="knowledge-section">
+        <h2>🌍 海洋知识</h2>
+        <div class="knowledge-cards">
+          <div class="card" id="card-0">
+            <div class="card-icon">🐬</div>
+            <h3>海洋生物多样性</h3>
+            <p>海洋是地球上最丰富的生态系统，拥有超过20万种已知物种，还有数百万种尚未被发现。</p>
+          </div>
+          <div class="card" id="card-1">
+            <div class="card-icon">♻️</div>
+            <h3>塑料污染危机</h3>
+            <p>每年约有800万吨塑料进入海洋，对海洋生物造成严重威胁，破坏生态平衡。</p>
+          </div>
+          <div class="card" id="card-2">
+            <div class="card-icon">🌡️</div>
+            <h3>海洋温度上升</h3>
+            <p>海洋吸收了90%以上的温室气体热量，导致珊瑚白化和海洋生态系统破坏。</p>
+          </div>
+          <div class="card" id="card-3">
+            <div class="card-icon">🪸</div>
+            <h3>珊瑚礁保护</h3>
+            <p>珊瑚礁是海洋生物的重要栖息地，为四分之一的海洋物种提供庇护所，但气候变化和污染正严重威胁它们的生存。</p>
+          </div>
+          <div class="card" id="card-4">
+            <div class="card-icon">🎣</div>
+            <h3>过度捕捞问题</h3>
+            <p>全球约三分之一的鱼类种群被过度捕捞，这不仅威胁海洋生态，也影响人类的粮食安全。</p>
+          </div>
+          <div class="card" id="card-5">
+            <div class="card-icon">🧪</div>
+            <h3>海洋酸化</h3>
+            <p>海洋吸收了人类排放的约30%二氧化碳，导致海水酸化，影响贝类和珊瑚的钙化过程。</p>
+          </div>
+          <div class="card" id="card-6">
+            <div class="card-icon">🏖️</div>
+            <h3>海滩垃圾清理</h3>
+            <p>每年有约800万吨塑料进入海洋，海滩清理是保护海洋环境的重要行动之一。</p>
+          </div>
+          <div class="card" id="card-7">
+            <div class="card-icon">🏝️</div>
+            <h3>海洋保护区</h3>
+            <p>建立海洋保护区可以有效保护海洋生物多样性，恢复受损的海洋生态系统。</p>
+          </div>
+        </div>
+        <div class="card-nav">
+          <button onclick="prevCard()">‹</button>
+          <span id="card-indicator">1 / 3</span>
+          <button onclick="nextCard()">›</button>
+        </div>
+      </div>
+
+      <div class="quick-actions">
+        <div class="action-card" onclick="showSection('creatures')">
+          <div class="action-icon">🐋</div>
+          <h3>认识海洋生物</h3>
+        </div>
+        <div class="action-card" onclick="showSection('actions')">
+          <div class="action-icon">💚</div>
+          <h3>保护行动指南</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="game" class="page">
+      <div class="game-header">
+        <button class="back-btn" onclick="showSection('home')">← 返回</button>
+        <div class="game-info">
+          <span class="score">得分: <span id="score">0</span></span>
+          <span class="time">时间: <span id="time">60</span>s</span>
+        </div>
+      </div>
+      
+      <div class="game-area" id="gameArea">
+        <div class="game-instruction">点击垃圾进行清理！</div>
+        <div class="game-over" id="gameOver">
+          <h2>🎉 游戏结束！</h2>
+          <p>你的得分: <span id="finalScore">0</span></p>
+          <button class="btn-primary" onclick="restartGame()">再玩一次</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="creatures" class="page">
+      <div class="page-header">
+        <button class="back-btn" onclick="showSection('home')">← 返回</button>
+        <h2>🐋 海洋生物</h2>
+      </div>
+      <div class="creatures-grid">
+        <div class="creature-card" onclick="showCreatureDetail(0)">
+          <img src="海洋生物/蓝鲸.jpg" alt="蓝鲸">
+          <div class="creature-info">
+            <h3>蓝鲸</h3>
+            <span class="status endangered">濒危</span>
+          </div>
+        </div>
+        <div class="creature-card" onclick="showCreatureDetail(1)">
+          <img src="C:\Users\Administrator\Desktop\海洋\海洋生物\小丑鱼.jpg" alt="小丑鱼">
+          <div class="creature-info">
+            <h3>小丑鱼</h3>
+            <span class="status least-concern">无危</span>
+          </div>
+        </div>
+        <div class="creature-card" onclick="showCreatureDetail(2)">
+          <img src="https://picsum.photos/id/1002/400/400" alt="海龟">
+          <div class="creature-info">
+            <h3>海龟</h3>
+            <span class="status vulnerable">易危</span>
+          </div>
+        </div>
+        <div class="creature-card" onclick="showCreatureDetail(3)">
+          <img src="https://picsum.photos/id/1003/400/400" alt="海豚">
+          <div class="creature-info">
+            <h3>海豚</h3>
+            <span class="status least-concern">无危</span>
+          </div>
+        </div>
+        <div class="creature-card" onclick="showCreatureDetail(4)">
+          <img src="https://picsum.photos/id/1004/400/400" alt="章鱼">
+          <div class="creature-info">
+            <h3>章鱼</h3>
+            <span class="status least-concern">无危</span>
+          </div>
+        </div>
+        <div class="creature-card" onclick="showCreatureDetail(5)">
+          <img src="https://picsum.photos/id/1019/400/400" alt="北极熊">
+          <div class="creature-info">
+            <h3>北极熊</h3>
+            <span class="status vulnerable">易危</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="creature-modal" id="creatureModal">
+        <div class="modal-content">
+          <button class="close-btn" onclick="closeCreatureModal()">✕</button>
+          <img id="modalImage" src="" alt="">
+          <h3 id="modalName"></h3>
+          <p id="modalScientific"></p>
+          <p id="modalDescription"></p>
+          <span id="modalStatus" class="status"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="actions" class="page">
+      <div class="page-header">
+        <button class="back-btn" onclick="showSection('home')">← 返回</button>
+        <h2>💚 保护行动</h2>
+      </div>
+      <div class="actions-list">
+        <div class="action-item">
+          <div class="action-icon-large">🛍️</div>
+          <div class="action-content">
+            <h3>减少使用塑料袋</h3>
+            <p>使用环保袋替代塑料袋，减少一次性塑料制品的使用。</p>
+          </div>
+        </div>
+        <div class="action-item">
+          <div class="action-icon-large">♻️</div>
+          <div class="action-content">
+            <h3>做好垃圾分类</h3>
+            <p>正确分类垃圾，确保可回收物被有效回收利用。</p>
+          </div>
+        </div>
+        <div class="action-item">
+          <div class="action-icon-large">🚮</div>
+          <div class="action-content">
+            <h3>不随意丢弃垃圾</h3>
+            <p>养成良好习惯，不向海洋、河流或公共场所丢弃垃圾。</p>
+          </div>
+        </div>
+        <div class="action-item">
+          <div class="action-icon-large">🌱</div>
+          <div class="action-content">
+            <h3>支持环保产品</h3>
+            <p>选择使用可降解材料制成的环保产品。</p>
+          </div>
+        </div>
+        <div class="action-item">
+          <div class="action-icon-large">🏊</div>
+          <div class="action-content">
+            <h3>参与海滩清理</h3>
+            <p>加入或组织海滩清理活动，保护海岸环境。</p>
+          </div>
+        </div>
+        <div class="action-item">
+          <div class="action-icon-large">📢</div>
+          <div class="action-content">
+            <h3>宣传环保理念</h3>
+            <p>向身边的人宣传海洋保护知识，共同守护蓝色星球。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="showSection('home')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">首页</span>
+      </button>
+      <button class="nav-item" onclick="showSection('game')">
+        <span class="nav-icon">🎮</span>
+        <span class="nav-text">游戏</span>
+      </button>
+      <button class="nav-item" onclick="showSection('creatures')">
+        <span class="nav-icon">🐋</span>
+        <span class="nav-text">生物</span>
+      </button>
+      <button class="nav-item" onclick="showSection('actions')">
+        <span class="nav-icon">💚</span>
+        <span class="nav-text">行动</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
